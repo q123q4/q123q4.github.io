@@ -64,7 +64,7 @@ npm run lint
 │   ├── Navbar.tsx         # 导航栏
 │   ├── Hero.tsx           # 首页 Hero 区域
 │   ├── About.tsx          # 关于我
-│   ├── Projects.tsx       # 项目展示
+│   ├── Projects.tsx        # 项目展示
 │   ├── Contact.tsx        # 联系方式
 │   └── Footer.tsx         # 页脚
 ├── content/              # 内容数据
@@ -142,4 +142,3 @@ MIT
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request！
-
