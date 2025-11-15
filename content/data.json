@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "name": "王博",
+    "tagline": "我用 AI/自动化解决实际问题",
+    "ctaText": "联系我",
+    "ctaLink": "mailto:you@example.com",
+    "avatar": "/avatar.jpg"
+  },
+  "about": {
+    "bio": "用 3–5 句话介绍你：现在做什么、擅长方向、过往亮点、正在寻找的合作或职位等。我是一名充满热情的全栈开发工程师，拥有丰富的 Web 开发经验。擅长使用现代前端框架构建响应式应用，同时也具备后端开发和数据库设计能力。我注重代码质量，喜欢解决复杂问题，并始终保持学习新技术的心态。",
+    "skills": [
+      "AI 工作流",
+      "内容自动化",
+      "产品设计",
+      "React",
+      "Next.js",
+      "TypeScript"
+    ]
+  },
+  "projects": [
+    {
+      "title": "项目 A",
+      "desc": "用自动化将周报生成效率提升 80%。",
+      "tags": ["AI", "Automation"],
+      "link": "https://example.com",
+      "image": "/projects/a.jpg"
+    },
+    {
+      "title": "项目 B",
+      "desc": "把 CSV 数据自动转为图表网页，零手工排版。",
+      "tags": ["Data", "Frontend"],
+      "link": "https://example.com/b",
+      "image": "/projects/b.jpg"
+    },
+    {
+      "title": "项目 C",
+      "desc": "第三个项目的描述，体现了多样化的技术能力和项目经验。",
+      "tags": ["React", "Python", "PostgreSQL"],
+      "link": "https://example.com/c",
+      "image": "/projects/c.jpg"
+    }
+  ],
+  "contact": {
+    "email": "you@example.com",
+    "socials": [
+      {
+        "name": "X",
+        "url": "https://x.com/yourid"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/yourid"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/yourid"
+      }
+    ]
+  }
+}
+
