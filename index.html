@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页 - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: {
+                            DEFAULT: "hsl(var(--primary))",
+                            foreground: "hsl(var(--primary-foreground))",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(var(--secondary))",
+                            foreground: "hsl(var(--secondary-foreground))",
+                        },
+                        destructive: {
+                            DEFAULT: "hsl(var(--destructive))",
+                            foreground: "hsl(var(--destructive-foreground))",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(var(--muted))",
+                            foreground: "hsl(var(--muted-foreground))",
+                        },
+                        accent: {
+                            DEFAULT: "hsl(var(--accent))",
+                            foreground: "hsl(var(--accent-foreground))",
+                        },
+                        popover: {
+                            DEFAULT: "hsl(var(--popover))",
+                            foreground: "hsl(var(--popover-foreground))",
+                        },
+                        card: {
+                            DEFAULT: "hsl(var(--card))",
+                            foreground: "hsl(var(--card-foreground))",
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 240 10% 3.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 240 10% 3.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 240 10% 3.9%;
+            --primary: 240 9% 10%;
+            --primary-foreground: 0 0% 98%;
+            --secondary: 240 4.8% 95.9%;
+            --secondary-foreground: 240 5.9% 10%;
+            --muted: 240 4.8% 95.9%;
+            --muted-foreground: 240 3.8% 46.1%;
+            --accent: 240 4.8% 95.9%;
+            --accent-foreground: 240 5.9% 10%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 0 0% 98%;
+            --border: 240 5.9% 90%;
+            --input: 240 5.9% 90%;
+            --ring: 240 10% 3.9%;
+        }
+
+        .dark {
+            --background: 240 10% 3.9%;
+            --foreground: 0 0% 98%;
+            --card: 240 10% 3.9%;
+            --card-foreground: 0 0% 98%;
+            --popover: 240 10% 3.9%;
+            --popover-foreground: 0 0% 98%;
+            --primary: 0 0% 98%;
+            --primary-foreground: 240 5.9% 10%;
+            --secondary: 240 3.7% 15.9%;
+            --secondary-foreground: 0 0% 98%;
+            --muted: 240 3.7% 15.9%;
+            --muted-foreground: 240 5% 64.9%;
+            --accent: 240 3.7% 15.9%;
+            --accent-foreground: 0 0% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 0 0% 98%;
+            --border: 240 3.7% 15.9%;
+            --input: 240 3.7% 15.9%;
+            --ring: 240 4.9% 83.9%;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-background text-foreground">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-primary-foreground font-bold">呆</span>
+                    </div>
+                    <span class="font-bold text-xl">小呆呆梦男的主页</span>
+                </div>
+            
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="hover:text-primary transition-colors">首页</a>
+                <a href="#about" class="hover:text-primary transition-colors">关于我</a>
+                <a href="#portfolio" class="hover:text-primary transition-colors">作品集</a>
+                <a href="#services" class="hover:text-primary transition-colors">服务/技能</a>
+                <a href="#blog" class="hover:text-primary transition-colors">博客</a>
+                <a href="#guestbook" class="hover:text-primary transition-colors">留言板</a>
+                <a href="#contact" class="hover:text-primary transition-colors">联系我</a>
+                <button onclick="toggleTheme()" class="p-2 rounded-md hover:bg-accent transition-colors">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </nav>
+
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-md hover:bg-accent">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t">
+            <nav class="container mx-auto px-4 py-4 space-y-2">
+                <a href="#home" class="block py-2 hover:text-primary transition-colors">首页</a>
+                <a href="#about" class="block py-2 hover:text-primary transition-colors">关于我</a>
+                <a href="#portfolio" class="block py-2 hover:text-primary transition-colors">作品集</a>
+                <a href="#services" class="block py-2 hover:text-primary transition-colors">服务/技能</a>
+                <a href="#blog" class="block py-2 hover:text-primary transition-colors">博客</a>
+                <a href="#guestbook" class="block py-2 hover:text-primary transition-colors">留言板</a>
+                <a href="#contact" class="block py-2 hover:text-primary transition-colors">联系我</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="py-20 md:py-32">
+            <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="relative w-32 h-32 mx-auto mb-8">
+                    <img src="avatar.jpg" alt="小呆呆梦男的头像" class="w-32 h-32 rounded-full object-cover border-4 border-primary/20 shadow-lg">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-primary/50 rounded-full opacity-0 hover:opacity-10 transition-opacity"></div>
+                </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
+                        您好，我是小呆呆梦男
+                    </h1>
+                    <p class="text-xl md:text-2xl text-muted-foreground mb-8">
+                        全栈开发工程师 | UI/UX设计师 | 创意工作者
+                    </p>
+                <p class="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                    小呆呆梦男的专属空间。专注于分享生活点滴和技术心得，打造属于我的数字小天地。
+                </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#portfolio" class="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium">
+                            查看作品
+                        </a>
+                        <a href="#contact" class="px-8 py-3 border border-border rounded-lg hover:bg-accent transition-colors font-medium">
+                            联系我
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-muted/30">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">关于我</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="relative w-48 h-48 mx-auto mb-6">
+                            <img src="avatar.jpg" alt="小呆呆梦男的头像" class="w-48 h-48 rounded-full object-cover border-4 border-primary/20 shadow-lg">
+                            <div class="absolute inset-0 bg-gradient-to-r from-primary to-primary/50 rounded-full opacity-0 hover:opacity-10 transition-opacity"></div>
+                        </div>
+                    </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">个人简介</h3>
+                            <p class="text-muted-foreground mb-6">
+                                我是小呆呆梦男，一个热爱生活、喜欢探索的数字创造者。在这里分享我的日常、
+                                思考和创意，希望能给大家带来一些有趣的内容。
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-user text-primary"></i>
+                                    <span>小呆呆梦男</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <span>热爱生活与分享</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-heart text-primary"></i>
+                                    <span>喜欢创造有趣内容</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">作品集</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="card border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                        <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+                            <img src="portfolio1.jpg" alt="电商平台项目" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">犯错卖萌这一块</h3>
+                        <p class="text-muted-foreground mb-4">太乘了</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-sm">React</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-sm">Node.js</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-sm">MongoDB</span>
+                        </div>
+                    </div>
+
+                    <div class="card border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                        <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+                            <img src="portfolio2_new.jpg" alt="被逮到的小呆呆项目" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">被逮到的小呆呆</h3>
+                        <p class="text-muted-foreground mb-4">一捏就爆浆</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-sm">Vue.js</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-sm">Python</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-sm">D3.js</span>
+                        </div>
+                    </div>
+
+            <div class="card border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div class="w-full h-40 rounded-lg mb-4 overflow-hidden">
+                    <img src="portfolio3_new.jpg" alt="无辜的小呆呆项目" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <h3 class="text-xl font-bold mb-2">无辜的小呆呆</h3>
+                <p class="text-muted-foreground mb-4">还是个小内八</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-2 py-1 bg-primary/10 text-primary rounded text-sm">React Native</span>
+                    <span class="px-2 py-1 bg-primary/10 text-primary rounded text-sm">TypeScript</span>
+                    <span class="px-2 py-1 bg-primary/10 text-primary rounded text-sm">Firebase</span>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guestbook Section -->
+        <section id="guestbook" class="py-20 bg-muted/30">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">留言板</h2>
+                <div class="max-w-4xl mx-auto">
+                    <!-- Message Form -->
+                    <div class="card border rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-bold mb-4">发表留言</h3>
+                        <form onsubmit="submitMessage(event)">
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <input type="text" id="name" placeholder="您的昵称" required 
+                                       class="px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <input type="email" id="email" placeholder="邮箱（可选）" 
+                                       class="px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium mb-2">心情</label>
+                                <div class="flex gap-4">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="mood" value="happy" checked class="mr-2">
+                                        <span>😊 开心</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="mood" value="neutral" class="mr-2">
+                                        <span>😐 一般</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="mood" value="sad" class="mr-2">
+                                        <span>😢 难过</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <textarea id="message" placeholder="写下您的留言..." required rows="4"
+                                      class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent mb-4"></textarea>
+                            <button type="submit" class="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
+                                发表留言
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Messages List -->
+                    <div id="messages-list" class="space-y-4">
+                        <!-- Messages will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">联系我</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6">联系信息</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                    <span>3182602614@qq.com</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-phone text-primary"></i>
+                                    <span>+86 15387103078</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    <span>中国，湖北</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="text-lg font-bold mb-4">社交媒体</h4>
+                                <div class="flex gap-4">
+                                    <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6">发送消息</h3>
+                            <form onsubmit="submitContact(event)">
+                                <div class="space-y-4">
+                                    <input type="text" placeholder="您的姓名" required
+                                           class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <input type="email" placeholder="您的邮箱" required
+                                           class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <input type="text" placeholder="主题" required
+                                           class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <textarea placeholder="消息内容" required rows="4"
+                                              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                                    <button type="submit" class="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
+                                        发送消息
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t bg-muted/30">
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center">
+                <p class="text-muted-foreground">
+                    © 2025 小呆呆梦男的个人主页. 保留所有权利.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button onclick="scrollToTop()" id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-colors hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/Hide Scroll to Top Button
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.getElementById('scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.remove('hidden');
+            } else {
+                scrollButton.classList.add('hidden');
+            }
+        });
+
+        // Initialize theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const icon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+
+        // Guestbook Messages Storage
+        let messages = JSON.parse(localStorage.getItem('guestbookMessages')) || [
+            {
+                id: 1,
+                name: '内扣呐哝',
+                email: 'visitor@example.com',
+                message: '这个网站设计得真棒！非常喜欢您的作品。',
+                mood: 'happy',
+                timestamp: new Date('2024-01-15'),
+                likes: 5
+            },
+            {
+                id: 2,
+                name: '开发者',
+                message: '代码质量很高，学到了很多！',
+                mood: 'happy',
+                timestamp: new Date('2024-01-14'),
+                likes: 3
+            }
+        ];
+
+        // Submit Message
+        function submitMessage(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const mood = document.querySelector('input[name="mood"]:checked').value;
+            
+            const newMessage = {
+                id: Date.now(),
+                name,
+                email,
+                message,
+                mood,
+                timestamp: new Date(),
+                likes: 0
+            };
+            
+            messages.unshift(newMessage);
+            localStorage.setItem('guestbookMessages', JSON.stringify(messages));
+            
+            // Reset form
+            event.target.reset();
+            
+            // Refresh messages display
+            displayMessages();
+            
+            alert('留言发表成功！');
+        }
+
+        // Display Messages
+        function displayMessages() {
+            const messagesList = document.getElementById('messages-list');
+            
+            if (messages.length === 0) {
+                messagesList.innerHTML = '<p class="text-center text-muted-foreground">暂无留言，成为第一个留言的人吧！</p>';
+                return;
+            }
+            
+            messagesList.innerHTML = messages.map(msg => `
+                <div class="card border rounded-lg p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4 class="font-bold text-lg">${msg.name}</h4>
+                            <p class="text-sm text-muted-foreground">${formatDate(msg.timestamp)}</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            ${getMoodEmoji(msg.mood)}
+                            <button onclick="likeMessage(${msg.id})" class="text-primary hover:text-primary/80">
+                                <i class="fas fa-heart"></i> ${msg.likes}
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">${msg.message}</p>
+                </div>
+            `).join('');
+        }
+
+        // Get Mood Emoji
+        function getMoodEmoji(mood) {
+            const moods = {
+                happy: '😊',
+                neutral: '😐',
+                sad: '😢'
+            };
+            return moods[mood] || '😐';
+        }
+
+        // Format Date
+        function formatDate(date) {
+            const d = new Date(date);
+            return d.toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // Like Message
+        function likeMessage(id) {
+            const message = messages.find(m => m.id === id);
+            if (message) {
+                message.likes++;
+                localStorage.setItem('guestbookMessages', JSON.stringify(messages));
+                displayMessages();
+            }
+        }
+
+        // Submit Contact Form
+        function submitContact(event) {
+            event.preventDefault();
+            alert('感谢您的留言！我会尽快回复您。');
+            event.target.reset();
+        }
+
+        // Initialize messages on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            displayMessages();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
