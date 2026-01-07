@@ -1,199 +1,102 @@
-# 个人主页 - 王博
+# 欢迎使用你的秒哒应用代码包
+秒哒应用链接
+    URL:https://www.miaoda.cn/projects/app-8rwp458ngzr5
 
-一个现代化的个人主页网站，基于 React + TypeScript + Vite 构建，展示个人作品、技能和博客文章。
+## 介绍
 
-## 🚀 特性
+项目介绍
 
-### 🎨 设计与用户体验
-- **现代化设计**: 采用 Tailwind CSS 构建响应式布局
-- **深色/浅色主题**: 支持主题切换，自动保存用户偏好
-- **流畅动画**: 使用 Framer Motion 实现页面过渡和微交互
-- **移动端优化**: 完全响应式设计，适配各种设备
+## 目录结构
 
-### 📱 页面功能
-- **首页**: Hero区域、核心技能展示、精选作品、最新动态、留言板预览
-- **关于我**: 个人简介、教育背景、工作经历、核心价值观
-- **作品集**: 项目分类、筛选功能、项目详情模态框
-- **服务/技能**: 服务介绍、技能展示、工作流程
-- **博客文章**: 文章分类、搜索功能、标签系统、详情页面
-- **留言板**: 实时留言、点赞回复、心情选择、通知提醒
-- **留言板**: 实时留言、点赞回复、心情选择、通知提醒
-- **联系我**: 联系表单、联系信息、社交媒体链接、FAQ
+```
+├── README.md # 说明文档
+├── components.json # 组件库配置
+├── index.html # 入口文件
+├── package.json # 包管理
+├── postcss.config.js # postcss 配置
+├── public # 静态资源目录
+│   ├── favicon.png # 图标
+│   └── images # 图片资源
+├── src # 源码目录
+│   ├── App.tsx # 入口文件
+│   ├── components # 组件目录
+│   ├── contexts # 上下文目录
+│   ├── db # 数据库配置目录
+│   ├── hooks # 通用钩子函数目录
+│   ├── index.css # 全局样式
+│   ├── layout # 布局目录
+│   ├── lib # 工具库目录
+│   ├── main.tsx # 入口文件
+│   ├── routes.tsx # 路由配置
+│   ├── pages # 页面目录
+│   ├── services  # 数据库交互目录
+│   ├── types   # 类型定义目录
+├── tsconfig.app.json  # ts 前端配置文件
+├── tsconfig.json # ts 配置文件
+├── tsconfig.node.json # ts node端配置文件
+└── vite.config.ts # vite 配置文件
+```
 
-### 🛠️ 技术特性
-- **TypeScript**: 完整的类型安全
-- **React Router**: 单页应用路由管理
-- **组件化架构**: 高度可复用的组件设计
-- **SEO友好**: 语义化HTML和Meta标签
-- **性能优化**: 代码分割、懒加载、图片优化
+## 技术栈
 
-## 📦 技术栈
+Vite、TypeScript、React、Supabase
 
-### 前端框架
-- **React 18** - 用户界面库
-- **TypeScript** - 类型安全的JavaScript
-- **Vite** - 快速构建工具
+## 本地开发
 
-### 样式和UI
-- **Tailwind CSS** - 实用优先的CSS框架
-- **Lucide React** - 现代图标库
-- **Framer Motion** - 动画库
+### 如何在本地编辑代码？
 
-### 开发工具
-- **ESLint** - 代码质量检查
-- **PostCSS** - CSS处理工具
-
-## 🚀 快速开始
+您可以选择 [VSCode](https://code.visualstudio.com/Download) 或者您常用的任何 IDE 编辑器，唯一的要求是安装 Node.js 和 npm.
 
 ### 环境要求
-- Node.js >= 16.0.0
-- npm 或 yarn
 
-### 安装依赖
-\`\`\`bash
-npm install
-# 或
-yarn install
-\`\`\`
+```
+# Node.js ≥ 20
+# npm ≥ 10
+例如：
+# node -v   # v20.18.3
+# npm -v    # 10.8.2
+```
 
-### 启动开发服务器
-\`\`\`bash
-npm run dev
-# 或
-yarn dev
-\`\`\`
+具体安装步骤如下：
 
-访问 [http://localhost:5173](http://localhost:5173) 查看网站。
+### 在 Windows 上安装 Node.js
 
-### 构建生产版本
-\`\`\`bash
-npm run build
-# 或
-yarn build
-\`\`\`
+```
+# Step 1: 访问Node.js官网：https://nodejs.org/，点击下载后，会根据你的系统自动选择合适的版本（32位或64位）。
+# Step 2: 运行安装程序：下载完成后，双击运行安装程序。
+# Step 3: 完成安装：按照安装向导完成安装过程。
+# Step 4: 验证安装：在命令提示符（cmd）或IDE终端（terminal）中输入 node -v 和 npm -v 来检查 Node.js 和 npm 是否正确安装。
+```
 
-### 预览生产版本
-\`\`\`bash
-npm run preview
-# 或
-yarn preview
-\`\`\`
+### 在 macOS 上安装 Node.js
 
-## 📁 项目结构
+```
+# Step 1: 使用Homebrew安装（推荐方法）：打开终端。输入命令brew install node并回车。如果尚未安装Homebrew，需要先安装Homebrew，
+可以通过在终端中运行如下命令来安装：
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+或者使用官网安装程序：访问Node.js官网。下载macOS的.pkg安装包。打开下载的.pkg文件，按照提示完成安装。
+# Step 2: 验证安装：在命令提示符（cmd）或IDE终端（terminal）中输入 node -v 和 npm -v 来检查 Node.js 和 npm 是否正确安装。
+```
 
-\`\`\`
-src/
-├── components/           # 可复用组件
-│   ├── home/           # 首页组件
-│   ├── blog/           # 博客相关组件
-│   ├── portfolio/      # 作品集组件
-│   ├── Header.tsx      # 页头组件
-│   ├── Footer.tsx      # 页脚组件
-│   └── ScrollToTop.tsx # 返回顶部组件
-├── contexts/           # React Context
-│   └── ThemeContext.tsx # 主题管理
-├── pages/              # 页面组件
-│   ├── Home.tsx        # 首页
-│   ├── About.tsx       # 关于页面
-│   ├── Portfolio.tsx   # 作品集页面
-│   ├── Services.tsx    # 服务页面
-│   ├── Blog.tsx        # 博客页面
-│   └── Contact.tsx     # 联系页面
-├── types/              # TypeScript 类型定义
-│   └── index.ts
-├── utils/              # 工具函数
-│   └── helpers.ts
-├── App.tsx             # 根组件
-├── main.tsx            # 应用入口
-└── index.css           # 全局样式
-\`\`\`
+### 安装完后按照如下步骤操作：
 
-## 🎯 自定义配置
+```
+# Step 1: 下载代码包
+# Step 2: 解压代码包
+# Step 3: 用IDE打开代码包，进入代码目录
+# Step 4: IDE终端输入命令行，安装依赖：npm i
+# Step 5: IDE终端输入命令行，启动开发服务器：npm run dev -- --host 127.0.0.1
+```
 
-### 个性化设置
-1. 修改 \`src/pages/Home.tsx\` 中的个人信息
-2. 更新 \`src/pages/About.tsx\` 中的个人简介
-3. 在 \`src/pages/Portfolio.tsx\` 中添加/修改项目
-4. 编辑 \`src/pages/Blog.tsx\` 中的博客文章
-5. 更新 \`src/pages/Contact.tsx\` 中的联系方式
+### 如何开发后端服务？
 
-### 主题配置
-主题配置在 \`tailwind.config.js\` 中，可以自定义：
-- 主色调
-- 字体
-- 动画效果
-- 断点设置
+配置环境变量，安装相关依赖
+如需使用数据库，请使用 supabase 官方版本或自行部署开源版本的 Supabase
 
-### 路由配置
-路由配置在 \`src/App.tsx\` 中，可以：
-- 添加新页面
-- 修改路由路径
-- 设置路由守卫
+### 如何配置应用中的三方 API？
 
-## 🌟 部署指南
+具体三方 API 调用方法，请参考帮助文档：[源码导出](https://cloud.baidu.com/doc/MIAODA/s/Xmewgmsq7)，了解更多详细内容。
 
-### Vercel 部署
-1. 推送代码到GitHub
-2. 在Vercel中导入项目
-3. 自动部署完成
+## 了解更多
 
-### Netlify 部署
-1. 运行 \`npm run build\`
-2. 上传 \`dist\` 文件夹到Netlify
-3. 配置重定向规则
-
-### 自定义服务器部署
-1. 运行 \`npm run build\`
-2. 将 \`dist\` 文件夹内容部署到服务器
-3. 配置服务器支持SPA路由
-
-## 🔧 开发指南
-
-### 代码规范
-项目使用ESLint进行代码检查：
-\`\`\`bash
-npm run lint
-\`\`\`
-
-### 组件开发
-- 使用函数组件和Hooks
-- 遵循单一职责原则
-- 添加TypeScript类型定义
-- 编写可复用的组件
-
-### 样式开发
-- 优先使用Tailwind CSS类
-- 避免内联样式
-- 保持响应式设计
-- 遵循设计系统
-
-## 🤝 贡献指南
-
-1. Fork 项目
-2. 创建功能分支 (\`git checkout -b feature/AmazingFeature\`)
-3. 提交更改 (\`git commit -m 'Add some AmazingFeature'\`)
-4. 推送到分支 (\`git push origin feature/AmazingFeature\`)
-5. 开启 Pull Request
-
-## 📝 许可证
-
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
-
-## 📞 联系方式
-
-- **邮箱**: your-email@example.com
-- **GitHub**: [@username](https://github.com/username)
-- **个人网站**: https://yourwebsite.com
-
-## 🙏 致谢
-
-感谢以下开源项目的支持：
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Lucide](https://lucide.dev/)
-
----
-
-⭐ 如果这个项目对你有帮助，请给它一个星标！
+您也可以查看帮助文档：[源码导出](https://cloud.baidu.com/doc/MIAODA/s/Xmewgmsq7)，了解更多详细内容。
