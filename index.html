@@ -1,12 +1,611 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能经济专业个人主页 - 王博</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>王博</h2>
+                <span class="nav-subtitle">智能经济专业</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">关于我</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#achievements" class="nav-link">学习成果</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">实践经历</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#insights" class="nav-link">专业思考</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">联系我</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <section id="home" class="home">
+        <div class="home-container">
+            <div class="home-content">
+                <h1 class="home-title">王博</h1>
+                <p class="home-subtitle">大二 智能经济专业</p>
+                <div class="home-tags">
+                    <span class="tag">智能经济学习者</span>
+                    <span class="tag">数据爱好者</span>
+                    <span class="tag">技术探索者</span>
+                </div>
+                <p class="home-intro">专注智能经济领域学习，探索技术与经济的融合之道</p>
+                <div class="home-buttons">
+                    <a href="#achievements" class="btn btn-primary">学习成果</a>
+                    <a href="#experience" class="btn btn-secondary">实践经历</a>
+                    <a href="#insights" class="btn btn-outline">专业思考</a>
+                </div>
+            </div>
+            <div class="home-keywords">
+                <div class="keywords-container">
+                    <span class="keyword">人工智能</span>
+                    <span class="keyword">大数据</span>
+                    <span class="keyword">数字经济</span>
+                    <span class="keyword">机器学习</span>
+                    <span class="keyword">经济分析</span>
+                    <span class="keyword">Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="personal-info">
+                        <h3>基本信息</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">姓名：</span>
+                                <span class="info-value">王博</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">年级：</span>
+                                <span class="info-value">大二</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">专业：</span>
+                                <span class="info-value">智能经济</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">学校：</span>
+                                <span class="info-value">XX大学</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">邮箱：</span>
+                                <span class="info-value">3182602614@qq.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="professional-info">
+                        <h3>专业认知与规划</h3>
+                        <p>选择智能经济专业，源于我对技术与经济融合的深刻兴趣。大二阶段，我正系统学习专业核心课程，深入理解数字经济时代的技术变革。</p>
+                        <p><strong>未来规划：</strong>深耕专业核心课程，提升数据处理与分析能力，计划参与相关科研或实习项目，为智能经济领域贡献自己的力量。</p>
+                    </div>
+                    
+                    <div class="skills-info">
+                        <h3>技能亮点</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Office办公软件</span>
+                            <span class="skill-tag">Python编程</span>
+                            <span class="skill-tag">数据分析基础</span>
+                            <span class="skill-tag">数据可视化</span>
+                            <span class="skill-tag">英语六级</span>
+                            <span class="skill-tag">团队协作</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-sidebar">
+                    <div class="avatar-section">
+                        <div class="avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h4>座右铭</h4>
+                        <p class="motto">技术驱动经济，数据创造价值</p>
+                    </div>
+                    <div class="awards-section">
+                        <h4>获奖情况</h4>
+                        <ul class="awards-list">
+                            <li>校级优秀学生奖学金</li>
+                            <li>院级三好学生</li>
+                            <li>Python编程比赛三等奖</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习成果 -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">学习成果</h2>
+            <div class="achievements-tabs">
+                <button class="tab-btn active" data-tab="courses">专业课程</button>
+                <button class="tab-btn" data-tab="projects">课程项目</button>
+                <button class="tab-btn" data-tab="certificates">技能证书</button>
+                <button class="tab-btn" data-tab="self-learning">自主学习</button>
+            </div>
+            
+            <div class="tab-content">
+                <!-- 专业课程 -->
+                <div id="courses" class="tab-pane active">
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <h4>微观经济学</h4>
+                            <p class="course-grade">成绩：A</p>
+                            <p class="course-desc">掌握市场机制、供需关系等基础经济理论</p>
+                            <div class="course-keypoints">
+                                <span>供需分析</span>
+                                <span>市场均衡</span>
+                                <span>消费者行为</span>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <h4>宏观经济学</h4>
+                            <p class="course-grade">成绩：A-</p>
+                            <p class="course-desc">理解国民经济运行机制和政策影响</p>
+                            <div class="course-keypoints">
+                                <span>GDP核算</span>
+                                <span>货币政策</span>
+                                <span>经济周期</span>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <h4>Python编程</h4>
+                            <p class="course-grade">成绩：A</p>
+                            <p class="course-desc">掌握Python基础语法和数据分析库</p>
+                            <div class="course-keypoints">
+                                <span>NumPy</span>
+                                <span>Pandas</span>
+                                <span>Matplotlib</span>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <h4>大数据基础</h4>
+                            <p class="course-grade">成绩：B+</p>
+                            <p class="course-desc">了解大数据技术架构和处理流程</p>
+                            <div class="course-keypoints">
+                                <span>Hadoop</span>
+                                <span>数据清洗</span>
+                                <span>分布式计算</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 课程项目 -->
+                <div id="projects" class="tab-pane">
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h4>电商数据分析报告</h4>
+                            <p class="project-desc">基于Python对电商销售数据进行清洗、分析和可视化</p>
+                            <div class="project-info">
+                                <span><i class="fas fa-user"></i> 个人项目</span>
+                                <span><i class="fas fa-tools"></i> Python, Pandas, Matplotlib</span>
+                            </div>
+                            <a href="#" class="project-link">查看报告</a>
+                        </div>
+                        <div class="project-card">
+                            <h4>宏观经济指标分析</h4>
+                            <p class="project-desc">小组合作分析中国宏观经济数据趋势</p>
+                            <div class="project-info">
+                                <span><i class="fas fa-users"></i> 小组项目</span>
+                                <span><i class="fas fa-tools"></i> Excel, 统计分析</span>
+                            </div>
+                            <a href="#" class="project-link">下载PDF</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 技能证书 -->
+                <div id="certificates" class="tab-pane">
+                    <div class="certificates-grid">
+                        <div class="certificate-card">
+                            <div class="cert-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4>Python二级证书</h4>
+                            <p>全国计算机等级考试</p>
+                            <span class="cert-date">2024年6月</span>
+                        </div>
+                        <div class="certificate-card">
+                            <div class="cert-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h4>英语六级</h4>
+                            <p>大学英语六级考试</p>
+                            <span class="cert-date">2024年12月</span>
+                        </div>
+                        <div class="certificate-card">
+                            <div class="cert-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>计算机二级</h4>
+                            <p>全国计算机等级考试</p>
+                            <span class="cert-date">2023年12月</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 自主学习 -->
+                <div id="self-learning" class="tab-pane">
+                    <div class="learning-grid">
+                        <div class="learning-item">
+                            <h4>慕课学习</h4>
+                            <ul>
+                                <li>《Python数据分析实战》- 中国大学MOOC</li>
+                                <li>《人工智能基础》- Coursera</li>
+                                <li>《计量经济学导论》- edX</li>
+                            </ul>
+                        </div>
+                        <div class="learning-item">
+                            <h4>代码练习</h4>
+                            <p>GitHub仓库：数据分析案例和算法实现</p>
+                            <a href="#" class="github-link">查看GitHub</a>
+                        </div>
+                        <div class="learning-item">
+                            <h4>阅读笔记</h4>
+                            <ul>
+                                <li>《数字经济》读书笔记</li>
+                                <li>《智能革命》学习心得</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实践经历 -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">实践经历</h2>
+            <div class="timeline">
+                <!-- 校内实践 -->
+                <div class="timeline-section">
+                    <h3 class="timeline-title">校内实践</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024.09 - 至今</div>
+                        <div class="timeline-content">
+                            <h4>学生会学术部干事</h4>
+                            <p class="timeline-org">XX大学学生会</p>
+                            <ul class="timeline-duties">
+                                <li>组织学术讲座和学科竞赛活动</li>
+                                <li>协助策划智能经济主题学术沙龙</li>
+                                <li>负责活动宣传和参与人员协调</li>
+                            </ul>
+                            <div class="timeline-skills">
+                                <span>组织协调</span>
+                                <span>活动策划</span>
+                                <span>团队协作</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024.03 - 2024.06</div>
+                        <div class="timeline-content">
+                            <h4>数学建模竞赛</h4>
+                            <p class="timeline-org">全国大学生数学建模竞赛</p>
+                            <ul class="timeline-duties">
+                                <li>负责数据分析和模型建立</li>
+                                <li>使用Python进行数据处理和可视化</li>
+                                <li>团队获得省级三等奖</li>
+                            </ul>
+                            <div class="timeline-skills">
+                                <span>数学建模</span>
+                                <span>Python编程</span>
+                                <span>数据分析</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 校外实践 -->
+                <div class="timeline-section">
+                    <h3 class="timeline-title">校外实践</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024.07 - 2024.08</div>
+                        <div class="timeline-content">
+                            <h4>数据分析实习生</h4>
+                            <p class="timeline-org">XX科技公司</p>
+                            <ul class="timeline-duties">
+                                <li>协助完成市场调研数据整理</li>
+                                <li>使用Excel和Python进行数据清洗</li>
+                                <li>参与撰写数据分析报告</li>
+                            </ul>
+                            <div class="timeline-skills">
+                                <span>数据分析</span>
+                                <span>Excel</span>
+                                <span>Python</span>
+                                <span>报告撰写</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experience-summary">
+                <h3>实践总结</h3>
+                <p>通过参与各类实践活动，我深刻体会到大数据在经济决策中的应用价值，锻炼了团队协作能力和实际问题解决能力。这些经历让我更加坚定了在智能经济领域深入发展的决心。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业思考 -->
+    <section id="insights" class="insights">
+        <div class="container">
+            <h2 class="section-title">专业思考</h2>
+            <div class="insights-content">
+                <!-- 专业文章 -->
+                <div class="articles-section">
+                    <h3>专业文章</h3>
+                    <div class="articles-grid">
+                        <article class="article-card" data-article="digital-economy">
+                            <h4>数字经济与实体经济融合的深度思考</h4>
+                            <p class="article-date">2024年12月 • 智能经济专题</p>
+                            <p class="article-excerpt">本文深入探讨数字技术如何重塑传统产业价值链，分析平台经济、共享经济等新模式对宏观经济结构的影响，以及政府在数字化转型中的政策角色...</p>
+                            <div class="article-meta">
+                                <span class="article-tag">数字经济</span>
+                                <span class="article-tag">产业转型</span>
+                                <span class="article-tag">政策分析</span>
+                            </div>
+                            <button class="read-more-btn" data-target="digital-economy">阅读全文 (约1500字)</button>
+                        </article>
+                        
+                        <article class="article-card" data-article="ai-finance">
+                            <h4>人工智能在金融风控中的创新应用与挑战</h4>
+                            <p class="article-date">2024年11月 • 金融科技研究</p>
+                            <p class="article-excerpt">基于实际案例分析机器学习算法在信贷风险评估、反欺诈检测、投资决策等金融场景的应用效果，探讨模型可解释性、数据隐私等关键问题...</p>
+                            <div class="article-meta">
+                                <span class="article-tag">人工智能</span>
+                                <span class="article-tag">金融风控</span>
+                                <span class="article-tag">机器学习</span>
+                            </div>
+                            <button class="read-more-btn" data-target="ai-finance">阅读全文 (约1200字)</button>
+                        </article>
+                        
+                        <article class="article-card" data-article="bigdata-economics">
+                            <h4>大数据时代经济学研究方法的范式变革</h4>
+                            <p class="article-date">2024年10月 • 方法论探讨</p>
+                            <p class="article-excerpt">从传统计量经济学到数据科学方法的转变，分析大数据如何改变经济研究的假设检验、因果推断和预测建模，探讨新方法在政策评估中的应用...</p>
+                            <div class="article-meta">
+                                <span class="article-tag">大数据</span>
+                                <span class="article-tag">经济学方法</span>
+                                <span class="article-tag">数据科学</span>
+                            </div>
+                            <button class="read-more-btn" data-target="bigdata-economics">阅读全文 (约1800字)</button>
+                        </article>
+                    </div>
+                </div>
+                
+                <!-- 文章详情模态框 -->
+                <div id="article-modal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 id="modal-title"></h3>
+                            <button class="close-modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article-info">
+                                <span id="modal-date"></span>
+                                <div id="modal-tags"></div>
+                            </div>
+                            <div id="modal-content"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 资源分享 -->
+                <div class="resources-section">
+                    <h3>资源分享</h3>
+                    <div class="resources-categories">
+                        <div class="resource-category">
+                            <h4>入门资源</h4>
+                            <ul>
+                                <li><a href="#">《Python数据分析入门》电子书</a></li>
+                                <li><a href="#">智能经济基础概念解析</a></li>
+                                <li><a href="#">经济学基础MOOC推荐</a></li>
+                            </ul>
+                        </div>
+                        <div class="resource-category">
+                            <h4>进阶工具</h4>
+                            <ul>
+                                <li><a href="#">Pandas数据分析实战教程</a></li>
+                                <li><a href="#">数据可视化工具使用指南</a></li>
+                                <li><a href="#">机器学习算法入门</a></li>
+                            </ul>
+                        </div>
+                        <div class="resource-category">
+                            <h4>行业资讯</h4>
+                            <ul>
+                                <li><a href="#">数字经济政策解读报告</a></li>
+                                <li><a href="#">人工智能行业动态月报</a></li>
+                                <li><a href="#">经济数据分析案例集</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 留言区 -->
+                <div class="discussion-section">
+                    <h3>交流讨论</h3>
+                    <div class="discussion-form">
+                        <h4>留下您的观点</h4>
+                        <form id="discussion-form">
+                            <div class="form-group">
+                                <input type="text" id="discuss-name" placeholder="您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="discuss-email" placeholder="您的邮箱">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="discuss-message" placeholder="您想讨论的专业问题或观点..." rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">提交讨论</button>
+                        </form>
+                    </div>
+                    <div class="discussion-list">
+                        <h4>最新讨论</h4>
+                        <div class="discussion-item">
+                            <div class="discuss-header">
+                                <span class="discuss-author">李老师</span>
+                                <span class="discuss-date">2024-12-24</span>
+                            </div>
+                            <p class="discuss-content">关于数字经济与实体经济融合的话题很有价值，期待看到更多实证研究。</p>
+                        </div>
+                        <div class="discussion-item">
+                            <div class="discuss-header">
+                                <span class="discuss-author">张同学</span>
+                                <span class="discuss-date">2024-12-23</span>
+                            </div>
+                            <p class="discuss-content">资源分享很有帮助，特别是Python数据分析的教程，对我学习很有启发。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 留言板 -->
+    <section id="guestbook" class="guestbook">
+        <div class="container">
+            <h2 class="section-title">留言板</h2>
+            <div class="guestbook-content">
+                <div class="guestbook-form">
+                    <h3>留下您的留言</h3>
+                    <form id="guestbook-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="您的邮箱">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="留言内容" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">提交留言</button>
+                    </form>
+                </div>
+                <div class="guestbook-messages">
+                    <h3>最新留言</h3>
+                    <div id="messages-container">
+                        <div class="message-item">
+                            <div class="message-header">
+                                <span class="message-author">张三</span>
+                                <span class="message-date">2024-12-24</span>
+                            </div>
+                            <p class="message-content">网站设计得很棒！功能齐全，界面美观。</p>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-header">
+                                <span class="message-author">李四</span>
+                                <span class="message-date">2024-12-23</span>
+                            </div>
+                            <p class="message-content">非常专业的个人主页，技能展示很清晰。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">联系方式</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>与我联系</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>3182602614@qq.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>15387103078</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>北京市朝阳区</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-wechat"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>发送消息</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contact-subject" placeholder="主题">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact-message" placeholder="消息内容" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 王博. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
