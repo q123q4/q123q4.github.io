@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成默认用户头像</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .avatar-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .avatar-item {
+            text-align: center;
+        }
+        canvas {
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 1px solid #ddd;
+            display: block;
+        }
+        button {
+            background: #1890ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #096dd9;
+        }
+        .download-all {
+            background: #52c41a;
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 16px;
+        }
+        .download-all:hover {
+            background: #389e0d;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: left;
+            border-left: 4px solid #1890ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>👤 生成默认用户头像</h1>
+        
+        <div class="instructions">
+            <h3>📝 使用说明：</h3>
+            <ol>
+                <li>下方会自动生成 3 个默认头像（200x200 像素）</li>
+                <li>每个头像点击"下载"按钮单独下载</li>
+                <li>将下载的 PNG 文件重命名为 <code>default-avatar.png</code></li>
+                <li>放到 <code>miniprogram/images/</code> 目录下</li>
+            </ol>
+        </div>
+
+        <div class="avatar-group">
+            <div class="avatar-item">
+                <h4>默认头像 1</h4>
+                <canvas id="avatar1" width="200" height="200"></canvas>
+                <button onclick="downloadAvatar('avatar1', 'default-avatar.png')">⬇️ 下载</button>
+            </div>
+
+            <div class="avatar-item">
+                <h4>默认头像 2</h4>
+                <canvas id="avatar2" width="200" height="200"></canvas>
+                <button onclick="downloadAvatar('avatar2', 'default-avatar.png')">⬇️ 下载</button>
+            </div>
+
+            <div class="avatar-item">
+                <h4>默认头像 3</h4>
+                <canvas id="avatar3" width="200" height="200"></canvas>
+                <button onclick="downloadAvatar('avatar3', 'default-avatar.png')">⬇️ 下载</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 生成默认头像 1
+        function generateAvatar1() {
+            const canvas = document.getElementById('avatar1');
+            const ctx = canvas.getContext('2d');
+            const size = 200;
+
+            // 背景渐变
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+
+            // 头像图标
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.beginPath();
+            ctx.arc(size / 2, size / 2 - 20, 50, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 用户图标
+            ctx.font = '80px Arial';
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('👤', size / 2, size / 2 + 5);
+
+            // 边框
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(10, 10, size - 20, size - 20);
+        }
+
+        // 生成默认头像 2
+        function generateAvatar2() {
+            const canvas = document.getElementById('avatar2');
+            const ctx = canvas.getContext('2d');
+            const size = 200;
+
+            // 背景
+            const gradient = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
+            gradient.addColorStop(0, '#fa709a');
+            gradient.addColorStop(1, '#fee140');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+
+            // 用户图标
+            ctx.font = '70px Arial';
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('👤', size / 2, size / 2 + 5);
+        }
+
+        // 生成默认头像 3
+        function generateAvatar3() {
+            const canvas = document.getElementById('avatar3');
+            const ctx = canvas.getContext('2d');
+            const size = 200;
+
+            // 背景
+            const gradient = ctx.createLinearGradient(0, 0, 0, size);
+            gradient.addColorStop(0, '#4facfe');
+            gradient.addColorStop(1, '#00f2fe');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+
+            // 用户图标
+            ctx.font = '80px Arial';
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('👤', size / 2, size / 2 + 5);
+        }
+
+        // 下载头像
+        function downloadAvatar(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+
+            setTimeout(() => {
+                alert(`✅ 已下载 ${filename}！\n\n请将文件放到 miniprogram/images/ 目录下`);
+            }, 300);
+        }
+
+        // 页面加载完成后初始化
+        window.onload = function() {
+            generateAvatar1();
+            generateAvatar2();
+            generateAvatar3();
+            console.log('✅ 默认头像生成完成！');
+        };
+    </script>
+</body>
+</html>

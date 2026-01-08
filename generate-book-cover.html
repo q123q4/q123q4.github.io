@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成默认图书封面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        canvas {
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 1px solid #ddd;
+        }
+        button {
+            background: #1890ff;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #096dd9;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: left;
+            border-left: 4px solid #1890ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 生成默认图书封面</h1>
+        
+        <div class="instructions">
+            <h3>📝 使用说明：</h3>
+            <ol>
+                <li>下方会自动生成一个默认图书封面（300x400 像素）</li>
+                <li>点击"下载"按钮保存图片</li>
+                <li>将下载的 PNG 文件重命名为 <code>default-book.png</code></li>
+                <li>放到 <code>miniprogram/images/</code> 目录下</li>
+            </ol>
+        </div>
+
+        <canvas id="bookCover" width="300" height="400"></canvas>
+        
+        <button onclick="downloadBookCover()">⬇️ 下载默认图书封面</button>
+    </div>
+
+    <script>
+        // 生成默认图书封面
+        function generateBookCover() {
+            const canvas = document.getElementById('bookCover');
+            const ctx = canvas.getContext('2d');
+
+            // 尺寸
+            const width = 300;
+            const height = 400;
+
+            // 背景 - 渐变
+            const gradient = ctx.createLinearGradient(0, 0, width, height);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
+            // 装饰 - 书脊阴影
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, 15, height);
+
+            // 装饰 - 标题区域
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+            ctx.fillRect(30, 40, width - 60, 200);
+
+            // 标题文字
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('图书封面', width / 2, 140);
+
+            // 副标题
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.font = '16px Arial';
+            ctx.fillText('Default Book Cover', width / 2, 180);
+
+            // 作者信息
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+            ctx.font = '14px Arial';
+            ctx.fillText('暂无封面图片', width / 2, 220);
+
+            // 底部装饰
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.fillRect(0, height - 60, width, 60);
+
+            // 底部图标
+            ctx.font = '30px Arial';
+            ctx.fillText('📖', width / 2, height - 30);
+
+            // 边框
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(5, 5, width - 10, height - 10);
+        }
+
+        // 下载图书封面
+        function downloadBookCover() {
+            const canvas = document.getElementById('bookCover');
+            const link = document.createElement('a');
+            link.download = 'default-book.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+
+            setTimeout(() => {
+                alert('✅ 已下载 default-book.png！\n\n请将文件放到 miniprogram/images/ 目录下');
+            }, 300);
+        }
+
+        // 页面加载完成后初始化
+        window.onload = function() {
+            generateBookCover();
+            console.log('✅ 默认图书封面生成完成！');
+        };
+    </script>
+</body>
+</html>

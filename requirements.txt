@@ -1,0 +1,5 @@
+# 图书管理系统依赖包
+# SQLite是Python内置，无需安装
+# 如需Excel导入导出功能，可安装openpyxl
+openpyxl>=3.1.0
+
